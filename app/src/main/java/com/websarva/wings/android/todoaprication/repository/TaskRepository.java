@@ -7,8 +7,6 @@ import com.websarva.wings.android.todoaprication.model.Task;
 
 import java.util.List;
 
-//import javax.security.auth.callback.Callback;
-
 //taskDaoインターフェースを使用しているので　taskDaoを変更した場合はここで実装しなければならない
 public class TaskRepository {
     private final TaskDao taskDao;
@@ -23,11 +21,6 @@ public class TaskRepository {
         new Thread(() -> taskDao.insertTask(task)).start(); //非同期処理
     }
 
-    //IDを降順で一覧を取得
-    //このメソッドをActivityやViewModelから呼び出せばデータを取得できる
-//    public List<Task> getAllTasks(){
-//        return taskDao.getAllTasks(); //直接取得
-//    }
 
     public void getAllTasks(Callback<List<Task>> callback){
         new Thread(() ->{
