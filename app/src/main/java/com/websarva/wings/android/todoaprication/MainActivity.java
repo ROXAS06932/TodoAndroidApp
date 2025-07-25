@@ -200,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
                 if(dX > 0){ // →スワイプ
                     int iconLeft = itemView.getLeft() + iconMargin;
                     int iconRight = iconLeft + icon.getIntrinsicWidth();
+                    icon.setBounds(iconLeft, iconTop, iconRight, iconBottom);
                 }else if(dX < 0){ // ←スワイプ
                     int iconRight = itemView.getRight() - iconMargin;
                     int iconLeft = iconRight - icon.getIntrinsicWidth();
