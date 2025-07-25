@@ -46,15 +46,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         holder.title.setText(task.title);
         holder.description.setText(task.description);
 
-//        //チェック状態を表示
-//        holder.checkbox.setChecked(task.isCompleted);
-//
-//        //チェックボックスの状態が表示されたら、データを更新
-//        holder.checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
-//            task.isCompleted = isChecked; // ✅ 状態更新
-//            taskRepository.updateTask(task); // ✅ データベースに保存
-//        });
-
         //delete処理の記述↓↓
         //表示制御 & 削除処理を記述
         //リスナを一旦解除してから状態をセット
@@ -88,9 +79,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
             etTitle.setText(task.title);
             etDescription.setText(task.description);
-
-//            EditText input = new EditText(context);
-//            input.setText(task.title); //現在のタイトルをダイアログにセット
 
             new AlertDialog.Builder(context)
                     .setTitle("タスクを編集")
